@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Make `dark:` variants respond to a `.dark` class on <html>, not OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* ---- Light Mode: white + light green climate theme ---- */
+  --background: #F1F8F4;
+  --surface: #FFFFFF;
+  --foreground: #0F1F14;
+  --muted: #5B6B60;
+  --border: #D7E6DB;
+  --primary: #2E7D32;
+  --primary-hover: #1B5E20;
+  --primary-soft: #C8E6C9;
+}
+
+.dark {
+  /* ---- Dark Mode: deep green-tinted dark ---- */
+  --background: #0B1410;
+  --surface: #12211A;
+  --foreground: #E8F5E9;
+  --muted: #8FA396;
+  --border: #1F3529;
+  --primary: #66BB6A;
+  --primary-hover: #81C784;
+  --primary-soft: #1B3A26;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
