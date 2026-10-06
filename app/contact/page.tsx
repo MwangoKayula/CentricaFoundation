@@ -11,6 +11,27 @@ export default function ContactPage() {
         </p>
       </header>
 
+{/* ============================================================
+    GOOGLE MAPS EMBED — Pembroke Court Flats, Lusaka
+    Coordinates: -15.412283708922256, 28.288042048333423
+    ============================================================ */}
+<section className="mb-12">
+  <div className="w-full aspect-video rounded-xl overflow-hidden border border-border shadow-sm">
+    <iframe
+      src="https://maps.google.com/maps?q=-15.412283708922256,28.288042048333423&t=&z=17&ie=UTF8&iwloc=&output=embed"
+      title="Centrica Foundation Zambia — Office Location"
+      className="w-full h-full"
+      style={{ border: 0 }}
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+  <p className="text-sm text-muted mt-3 text-center">
+    Plot 4399 Pembroke Court Flats, Makishi Rd, Lusaka, Zambia
+  </p>
+</section>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-8">
@@ -19,18 +40,24 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
-              <a href="mailto:centricafoundationzambia@gmail.com" className="text-muted hover:text-primary transition-colors">
-  centricafoundationzambia@gmail.com
-</a>
+              <a
+                href="mailto:centricafoundationzambia@gmail.com"
+                className="text-muted hover:text-primary transition-colors break-all"
+              >
+                centricafoundationzambia@gmail.com
+              </a>
             </div>
             <div>
               <h3 className="text-lg font-bold text-foreground mb-2">Phone</h3>
-              <p className="text-muted">+260 967954403</p>
+              <a
+                href="tel:+260967954403"
+                className="text-muted hover:text-primary transition-colors"
+              >
+                +260 967954403
+              </a>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                Address
-              </h3>
+              <h3 className="text-lg font-bold text-foreground mb-2">Address</h3>
               <p className="text-muted">
                 Plot 4399 Pembroke Court Flats
                 <br />

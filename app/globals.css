@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-/* Make `dark:` variants respond to a `.dark` class on <html>, not OS setting */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* ---- Light Mode: white + light green climate theme ---- */
+  /* ---- Light Mode ---- */
   --background: #F1F8F4;
   --surface: #FFFFFF;
   --foreground: #0F1F14;
@@ -13,10 +12,17 @@
   --primary: #2E7D32;
   --primary-hover: #1B5E20;
   --primary-soft: #C8E6C9;
+
+  /* ---- Footer (always dark for contrast) ---- */
+  --footer-bg: #16301F;          /* deep forest green */
+  --footer-foreground: #E8F5E9;  /* light green-white text */
+  --footer-muted: #A9BFB0;       /* muted green for secondary text */
+  --footer-border: #234A30;      /* subtle green border */
+  --footer-accent: #81C784;      /* brighter green for links/hovers */
 }
 
 .dark {
-  /* ---- Dark Mode: deep green-tinted dark ---- */
+  /* ---- Dark Mode ---- */
   --background: #0B1410;
   --surface: #12211A;
   --foreground: #E8F5E9;
@@ -25,6 +31,13 @@
   --primary: #66BB6A;
   --primary-hover: #81C784;
   --primary-soft: #1B3A26;
+
+  /* ---- Footer (even darker in dark mode) ---- */
+  --footer-bg: #060D09;
+  --footer-foreground: #E8F5E9;
+  --footer-muted: #7F9587;
+  --footer-border: #14241A;
+  --footer-accent: #81C784;
 }
 
 @theme inline {
@@ -36,6 +49,12 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-soft: var(--primary-soft);
+
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-border: var(--footer-border);
+  --color-footer-accent: var(--footer-accent);
 }
 
 body {

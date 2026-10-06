@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image'; // Import Image
+import Image from 'next/image';
 
 const quickLinks = [
   { href: '/about', label: 'About Us' },
@@ -37,30 +37,27 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface border-t border-border text-muted mt-auto">
+    <footer className="bg-footer-bg text-footer-foreground mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
-        {/* Top row: brand + columns */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-          {/* Brand column */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-4 text-foreground">
+            <Link href="/" className="flex items-center gap-3 mb-4 text-footer-foreground">
               <Image
                 src="/centrica-logo.png"
                 alt="Centrica Foundation Zambia"
-                width={36}
-                height={36}
+                width={40}
+                height={40}
               />
-              <span className="text-lg font-bold tracking-tighter">
+              <span className="text-lg font-bold tracking-tight">
                 Centrica Foundation Zambia
               </span>
             </Link>
-            <p className="max-w-md leading-relaxed">
+            <p className="max-w-md leading-relaxed text-footer-muted">
               Our foundation is dedicated to combating climate change through
-              collaborative tree planting and conservation initiatives. We work to
-              restore ecosystems, and promote sustainable land use.
+              collaborative tree planting and conservation initiatives. We work
+              to restore ecosystems and promote sustainable land use.
             </p>
 
-            {/* Social icons */}
             <div className="flex gap-3 mt-6">
               {socials.map((s) => (
                 <a
@@ -69,7 +66,7 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="p-2 rounded-full bg-primary-soft text-primary hover:bg-primary hover:text-white transition-colors duration-200"
+                  className="p-2 rounded-full bg-white/10 text-footer-foreground hover:bg-footer-accent hover:text-footer-bg transition-colors duration-200"
                 >
                   {s.icon}
                 </a>
@@ -77,15 +74,16 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
             </div>
           </div>
 
-          {/* Quick links */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-footer-foreground font-semibold mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-primary transition-colors duration-200"
+                    className="text-footer-muted hover:text-footer-accent transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -94,15 +92,16 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
             </ul>
           </div>
 
-          {/* Resources */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Resources</h3>
+            <h3 className="text-footer-foreground font-semibold mb-4">
+              Resources
+            </h3>
             <ul className="space-y-2">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-primary transition-colors duration-200"
+                    className="text-footer-muted hover:text-footer-accent transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -112,38 +111,47 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
           </div>
         </div>
 
-        {/* Contact & Newsletter */}
-        <div className="border-t border-border pt-8 mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="border-t border-footer-border pt-8 mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-footer-foreground font-semibold mb-4">
+              Contact Us
+            </h3>
+            <ul className="space-y-2 text-sm text-footer-muted">
               <li>Plot 4399 Pembroke Court Flats, Makishi Rd, Lusaka, Zambia</li>
               <li>
-                <a href="tel:+260967954403" className="hover:text-primary">
+                <a
+                  href="tel:+260967954403"
+                  className="hover:text-footer-accent transition-colors"
+                >
                   +260 967954403
                 </a>
               </li>
               <li>
-                <a href="mailto:centricaforestry@gmail.com" className="hover:text-primary">
+                <a
+                  href="mailto:centricafoundationzambia@gmail.com"
+                  className="hover:text-footer-accent transition-colors break-all"
+                >
                   centricafoundationzambia@gmail.com
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Stay in the loop</h3>
-            <p className="text-sm mb-4">
+            <h3 className="text-footer-foreground font-semibold mb-4">
+              Stay in the loop
+            </h3>
+            <p className="text-sm mb-4 text-footer-muted">
               Monthly updates on our work — no spam, unsubscribe anytime.
             </p>
             <form className="flex gap-2">
               <input
                 type="email"
                 placeholder="you@example.com"
-                className="flex-grow px-3 py-2 rounded-lg bg-background border border-border text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-grow px-3 py-2 rounded-lg bg-white/10 border border-footer-border text-footer-foreground placeholder:text-footer-muted focus:outline-none focus:ring-2 focus:ring-footer-accent"
               />
               <button
                 type="submit"
-                className="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-hover transition-colors duration-200"
+                className="bg-footer-accent text-footer-bg px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200"
               >
                 Subscribe
               </button>
@@ -151,14 +159,9 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between gap-4 text-sm">
-          <p>
-            © {year} Centrica Foundation Zambia. All rights reserved.
-          </p>
-          <p>
-            Non-governmental organisation (NGO) · Non-profit organisation
-          </p>
+        <div className="border-t border-footer-border pt-6 flex flex-col md:flex-row justify-between gap-4 text-sm text-footer-muted">
+          <p>© {year} Centrica Foundation Zambia. All rights reserved.</p>
+          <p>Non-governmental organisation (NGO) · Non-profit organisation</p>
         </div>
       </div>
     </footer>
