@@ -123,7 +123,7 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
                   href="tel:+260967954403"
                   className="hover:text-footer-accent transition-colors"
                 >
-                  +260 967954403
+                  +260 973025709
                 </a>
               </li>
               <li>

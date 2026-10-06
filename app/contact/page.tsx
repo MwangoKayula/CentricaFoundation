@@ -53,7 +53,7 @@ export default function ContactPage() {
                 href="tel:+260967954403"
                 className="text-muted hover:text-primary transition-colors"
               >
-                +260 967954403
+                +260 973025709
               </a>
             </div>
             <div>
