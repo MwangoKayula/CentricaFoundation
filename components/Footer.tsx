@@ -125,7 +125,7 @@ export default function Footer({ locale = 'en', t = {} }: FooterProps) {
               </li>
               <li>
                 <a href="mailto:centricaforestry@gmail.com" className="hover:text-primary">
-                  centricaforestry@gmail.com
+                  centricafoundationzambia@gmail.com
                 </a>
               </li>
             </ul>

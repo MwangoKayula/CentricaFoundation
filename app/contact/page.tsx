@@ -19,7 +19,9 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
-              <p className="text-muted">centricaforestry@gmail.com</p>
+              <a href="mailto:centricafoundationzambia@gmail.com" className="text-muted hover:text-primary transition-colors">
+  centricafoundationzambia@gmail.com
+</a>
             </div>
             <div>
               <h3 className="text-lg font-bold text-foreground mb-2">Phone</h3>
